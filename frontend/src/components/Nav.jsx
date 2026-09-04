@@ -16,6 +16,15 @@ const Nav = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [menuOpen]);
+
   const navLinks = [
     { name: "Explore", href: "/" },
     { name: "Careers", href: "/careers" },
@@ -33,20 +42,20 @@ const Nav = () => {
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-container max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
 
-          {/* Logo Container - Prevents collision and mobile overflow */}
-          <Link to="/" className="logo flex items-center gap-2 sm:gap-3 flex-shrink-0 min-w-0 max-w-[70%] sm:max-w-none">
+          {/* Logo Container - Clean Flex Layout */}
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 text-[var(--ink)]">
             <img 
               src={logo} 
-              alt="A & J Career Guidance" 
-              className="h-8 sm:h-10 md:h-11 w-auto object-contain rounded-xl shadow-sm border border-[var(--stone)]/60 flex-shrink-0" 
+              alt="A & J Career Guidance Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-full border border-[var(--stone)]/80 shadow-sm shrink-0" 
             />
-            <span className="font-display tracking-wide text-xs sm:text-base md:text-lg lg:text-xl font-semibold text-[var(--ink)] truncate">
+            <span className="font-display text-sm sm:text-base md:text-lg font-bold tracking-tight text-[var(--ink)] shrink-0">
               A & J Career Guidance
             </span>
           </Link>
 
-          {/* Desktop Navigation - Properly separated from logo */}
-          <div className="hidden xl:flex nav-links items-center gap-3 lg:gap-4 xl:gap-5 flex-shrink-0 ml-4">
+          {/* Desktop Navigation */}
+          <div className="hidden xl:flex nav-links items-center gap-3 lg:gap-4 xl:gap-5 shrink-0 ml-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -61,7 +70,7 @@ const Nav = () => {
 
             <Link
               to="/contact"
-              className="btn btn-dark group font-sans text-xs tracking-wider uppercase py-2.5 px-4 rounded-full ml-1 flex-shrink-0"
+              className="btn btn-dark group font-sans text-xs tracking-wider uppercase py-2.5 px-4 rounded-full ml-1 shrink-0"
               style={{
                 background: "var(--ink)",
                 color: "var(--ivory)",
@@ -76,52 +85,58 @@ const Nav = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle Button */}
           <button
-            className="xl:hidden flex items-center justify-center text-[var(--ink)] p-2 flex-shrink-0 rounded-lg hover:bg-[var(--stone)]/40 transition-colors"
+            className="xl:hidden flex items-center justify-center text-[var(--ink)] p-2 shrink-0 rounded-lg hover:bg-[var(--stone)]/40 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
           >
             {menuOpen ? (
-              <X size={24} strokeWidth={1.8} />
+              <X size={24} strokeWidth={2} />
             ) : (
-              <Menu size={24} strokeWidth={1.8} />
+              <Menu size={24} strokeWidth={2} />
             )}
           </button>
 
         </div>
       </nav>
 
-      {/* Mobile Overlay Menu */}
+      {/* Mobile Drawer Overlay */}
       <div
         className={`
-          fixed inset-0 z-[90]
+          fixed inset-0 z-[100]
           bg-[#111111] text-[#F5F2EA]
-          transition-transform duration-500
+          flex flex-col
+          transition-transform duration-300 ease-in-out
           ${menuOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
 
-        {/* Mobile Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-          <div className="flex items-center gap-2 max-w-[80%] min-w-0">
-            <img src={logo} alt="A & J Career Guidance" className="h-8 w-auto object-contain rounded-lg flex-shrink-0" />
-            <span className="font-display text-sm font-semibold tracking-wide text-[#F5F2EA] truncate">
+        {/* Mobile Drawer Header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0 bg-[#111111]">
+          <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 text-[#F5F2EA]">
+            <img 
+              src={logo} 
+              alt="A & J Career Guidance Logo" 
+              className="w-8 h-8 object-cover rounded-full border border-white/20 shrink-0" 
+            />
+            <span className="font-display text-sm sm:text-base font-bold tracking-tight text-[#F5F2EA] shrink-0">
               A & J Career Guidance
             </span>
-          </div>
+          </Link>
 
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-[#F5F2EA] p-1 rounded-lg hover:bg-white/10"
+            className="text-[#F5F2EA] p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
+            aria-label="Close menu"
           >
-            <X size={26} strokeWidth={1.8} />
+            <X size={24} strokeWidth={2} />
           </button>
         </div>
 
-        {/* Mobile Links */}
-        <div className="flex h-[calc(100vh-80px)] flex-col justify-between px-6 overflow-y-auto py-8">
-          <div className="flex flex-col">
+        {/* Mobile Drawer Navigation Links */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 flex flex-col justify-between">
+          <div className="flex flex-col gap-1">
             {navLinks.map((link, index) => (
               <Link
                 key={link.name}
@@ -131,7 +146,7 @@ const Nav = () => {
                   border-b border-white/10
                   py-3
                   font-display
-                  text-xl sm:text-2xl
+                  text-lg sm:text-xl
                   tracking-tight
                   transition-colors
                   hover:text-[#FF5B45]
@@ -146,31 +161,35 @@ const Nav = () => {
             ))}
           </div>
 
-          {/* Mobile CTA */}
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="
-              mt-6
-              flex
-              w-full
-              items-center
-              justify-center
-              gap-3
-              rounded-full
-              bg-[#FF5B45]
-              px-6
-              py-3.5
-              text-sm
-              font-semibold
-              text-[#111111]
-              shadow-lg
-            "
-          >
-            Consult Counselor
-            <ArrowRight size={17} />
-          </Link>
+          {/* Mobile Drawer CTA Button */}
+          <div className="pt-6 shrink-0">
+            <Link
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="
+                flex
+                w-full
+                items-center
+                justify-center
+                gap-3
+                rounded-full
+                bg-[#FF5B45]
+                px-6
+                py-3.5
+                text-sm
+                font-semibold
+                text-[#111111]
+                shadow-lg
+                hover:bg-[#ff452b]
+                transition-colors
+              "
+            >
+              Consult Counselor
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
+
       </div>
     </>
   );
