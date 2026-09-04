@@ -13,6 +13,7 @@ import Roadmap from "./pages/Roadmap";
 import Resources from "./pages/Resources";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Scholarship from "./pages/Scholarship";
 import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
@@ -45,6 +46,7 @@ const AppContent = ({ loading, setLoading }) => {
               <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/scholarship" element={<Scholarship />} />
             </Routes>
           </div>
           <WhatsAppButton />

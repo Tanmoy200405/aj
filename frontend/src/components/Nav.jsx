@@ -32,6 +32,7 @@ const Nav = () => {
     { name: "Courses", href: "/courses" },
     { name: "Quiz", href: "/quiz" },
     { name: "Compare", href: "/compare" },
+    { name: "Scholarship", href: "/scholarship" },
     { name: "About", href: "/about" },
   ];
 

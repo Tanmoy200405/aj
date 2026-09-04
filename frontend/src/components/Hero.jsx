@@ -20,7 +20,22 @@ const Hero = () => {
           {/* LEFT COLUMN: Editorial Typography */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             
-            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[var(--coral)] mb-5 block">
+            {/* Scholarship Notification Banner */}
+            <Link 
+              to="/scholarship"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[var(--coral)]/10 border border-[var(--coral)]/20 hover:bg-[var(--coral)]/20 hover:border-[var(--coral)]/40 transition-colors w-fit mb-6 group cursor-pointer"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--coral)] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--coral)]"></span>
+              </span>
+              <span className="text-xs md:text-sm font-bold text-[var(--ink)]">
+                Get <span className="text-[var(--coral)] font-black">₹1,000</span> Scholarship on Admission Form Upload
+              </span>
+              <ArrowRight size={14} className="text-[var(--coral)] transform group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[var(--muted)] mb-5 block">
               A & J CAREER GUIDANCE
             </span>
 
