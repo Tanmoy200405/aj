@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Sparkles, ArrowRight, GraduationCap } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 const ScholarshipPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,31 +11,39 @@ const ScholarshipPopup = () => {
     const timer = setTimeout(() => {
       if (!hasClosed) {
         setIsVisible(true);
-        // Trigger confetti when popup opens for excitement
-        const duration = 3 * 1000;
-        const end = Date.now() + duration;
+        
+        // Dynamically load confetti to avoid Vite build/import errors
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js';
+        script.onload = () => {
+          const duration = 3 * 1000;
+          const end = Date.now() + duration;
 
-        const frame = () => {
-          confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#FF5B45', '#111111', '#FFFFFF']
-          });
-          confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#FF5B45', '#111111', '#FFFFFF']
-          });
+          const frame = () => {
+            if (window.confetti) {
+              window.confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#FF5B45', '#111111', '#FFFFFF']
+              });
+              window.confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#FF5B45', '#111111', '#FFFFFF']
+              });
+            }
 
-          if (Date.now() < end) {
-            requestAnimationFrame(frame);
-          }
+            if (Date.now() < end) {
+              requestAnimationFrame(frame);
+            }
+          };
+          frame();
         };
-        frame();
+        document.body.appendChild(script);
       }
     }, 2000);
 
