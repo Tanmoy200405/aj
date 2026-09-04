@@ -37,22 +37,18 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-4">
               <Link 
                 to="/contact" 
-                className="btn group py-4 px-8 rounded-full text-xs md:text-sm tracking-wider uppercase font-semibold flex items-center gap-3 transition-all duration-300 shadow-md"
-                style={{
-                  background: "var(--ink)",
-                  color: "var(--ivory)",
-                  border: "none",
-                }}
+                className="btn btn-coral group"
               >
                 <span>Consult Counselor</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
 
               <Link 
                 to="/careers" 
-                className="btn py-4 px-8 rounded-full text-xs md:text-sm tracking-wider uppercase font-semibold flex items-center gap-2 border border-[var(--stone)] text-[var(--ink)] hover:bg-[var(--stone)]/20 transition-all duration-300"
+                className="btn btn-outline group"
               >
                 <span>Explore Careers</span>
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5 opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0" />
               </Link>
             </div>
 

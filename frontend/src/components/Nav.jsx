@@ -70,15 +70,7 @@ const Nav = () => {
 
             <Link
               to="/contact"
-              className="btn btn-dark group font-sans text-xs tracking-wider uppercase py-2.5 px-4 rounded-full ml-1 shrink-0"
-              style={{
-                background: "var(--ink)",
-                color: "var(--ivory)",
-                border: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.4rem"
-              }}
+              className="btn btn-coral group text-xs tracking-wider uppercase py-2.5 px-5 shrink-0"
             >
               Consult Counselor
               <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
