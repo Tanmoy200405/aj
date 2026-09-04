@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const AppContent = ({ loading, setLoading }) => {
   const location = useLocation();
@@ -46,6 +47,7 @@ const AppContent = ({ loading, setLoading }) => {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
+          <WhatsAppButton />
         </>
       )}
     </div>
