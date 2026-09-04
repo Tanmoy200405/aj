@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles, Layers, Cpu, Palette, Compass, Briefcase } from "lucide-react";
 
 import imgBuild from "../assets/career_build.png";
 import imgCreate from "../assets/career_create.png";
@@ -14,39 +14,21 @@ gsap.registerPlugin(ScrollTrigger);
 const Careers = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef(null);
-  const listRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Desktop cards stagger reveal
       if (cardsRef.current) {
         gsap.from(cardsRef.current.children, {
           scrollTrigger: {
             trigger: cardsRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-        });
-      }
-
-      // Mobile list item reveal
-      if (listRef.current) {
-        gsap.from(listRef.current.children, {
-          scrollTrigger: {
-            trigger: listRef.current,
             start: "top 85%",
             toggleActions: "play none none none",
           },
-          x: -30,
+          y: 40,
           opacity: 0,
           duration: 0.8,
-          stagger: 0.1,
-          ease: "power2.out",
+          stagger: 0.15,
+          ease: "power3.out",
         });
       }
     }, sectionRef);
@@ -58,134 +40,149 @@ const Careers = () => {
     {
       num: "01",
       title: "BUILD",
-      type: "Engineering",
-      desc: "Tech + Innovation",
+      type: "Engineering & Tech",
+      desc: "Software, Robotics, Hardware & Systems",
+      icon: Cpu,
+      tags: ["AI & Coding", "Robotics", "System Design"],
       img: imgBuild,
     },
     {
       num: "02",
       title: "CREATE",
-      type: "Design",
-      desc: "Art + Expression",
+      type: "Design & Expression",
+      desc: "UI/UX, Architecture, Media & Animation",
+      icon: Palette,
+      tags: ["UI/UX Design", "3D Motion", "Architecture"],
       img: imgCreate,
     },
     {
       num: "03",
       title: "DISCOVER",
-      type: "Science",
-      desc: "Research + Curiosity",
+      type: "Science & Data",
+      desc: "Research, Medicine, AI & Biotechnology",
+      icon: Compass,
+      tags: ["Data Science", "Biotech", "Medical Research"],
       img: imgDiscover,
     },
     {
       num: "04",
       title: "LEAD",
-      type: "Business",
-      desc: "Impact + Leadership",
+      type: "Business & Strategy",
+      desc: "Finance, Management & Entrepreneurship",
+      icon: Briefcase,
+      tags: ["Fintech", "Startups", "Strategy"],
       img: imgLead,
     },
   ];
 
   return (
-    <section ref={sectionRef} className="section section-dark py-24 bg-[var(--ink)] text-[var(--ivory)]" id="careers">
-      <div className="container">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_2.2fr] items-start">
+    <section ref={sectionRef} className="section py-24 bg-[#111110] text-[#F5F2EA] relative overflow-hidden" id="careers">
+      
+      {/* Background Radial Glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--coral)]/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="container relative z-10 max-w-[1400px]">
+        <div className="grid gap-12 lg:grid-cols-12 items-start">
           
-          {/* LEFT COLUMN - TEXT */}
-          <div className="flex flex-col justify-between h-full lg:sticky lg:top-32">
+          {/* LEFT COLUMN - Editorial Section Header */}
+          <div className="lg:col-span-4 flex flex-col justify-between h-full lg:sticky lg:top-36">
             <div>
-              <h2 className="section-title text-[var(--ivory)] text-5xl md:text-6xl font-medium leading-[0.92] tracking-tight">
-                Explore.<br />Discover.<br />Become.
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[var(--coral)] text-xs font-semibold uppercase tracking-widest mb-6">
+                <Sparkles size={13} />
+                <span>Explore Disciplines</span>
+              </div>
+
+              <h2 className="font-display text-5xl sm:text-6xl md:text-7xl font-medium leading-[0.95] tracking-tight text-[#F5F2EA] mb-6">
+                Explore. <br />
+                Discover. <br />
+                <span className="italic font-display text-[var(--coral)]">Become.</span>
               </h2>
-              <p className="mt-6 text-[#aaa69d] text-base leading-relaxed max-w-[320px]">
-                Dive into different worlds and find what truly inspires you.
+
+              <p className="text-[#A3A099] text-sm md:text-base leading-relaxed max-w-[340px] mb-8 font-light">
+                Step into specialized professional fields designed to align your innate talent with high-impact global careers.
               </p>
             </div>
             
             <Link 
               to="/careers" 
-              className="mt-10 lg:mt-24 inline-flex items-center gap-2 text-[var(--coral)] font-semibold text-sm hover:gap-3 transition-all duration-300"
+              className="btn btn-coral inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold py-3.5 px-7 rounded-full w-fit group shadow-lg"
             >
-              Explore all careers 
-              <ArrowUpRight size={16} />
+              <span>Explore All Pathways</span>
+              <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
 
-          {/* RIGHT COLUMN - CARDS (Desktop) / LIST (Mobile) */}
-          <div className="w-full">
-            
-            {/* Desktop grid layout */}
-            <div ref={cardsRef} className="hidden md:grid grid-cols-2 xl:grid-cols-4 gap-6">
-              {careerData.map((item, index) => (
-                <Link 
-                  to="/careers"
-                  state={{ category: item.title }}
-                  key={index}
-                  className="group relative flex flex-col justify-between p-6 rounded-2xl bg-[#1c1c1a]/50 border border-white/5 hover:border-white/20 transition-all duration-500 overflow-hidden h-[450px]"
-                >
-                  {/* Background Zoom Image on Hover */}
-                  <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                    <img 
-                      src={item.img} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[var(--ink)]/40 to-transparent" />
-                  </div>
-
-                  {/* Card Content Top */}
-                  <div className="relative z-10">
-                    <span className="text-xs font-mono text-[var(--coral)]">{item.num}</span>
-                    <h3 className="font-display text-3xl font-medium tracking-tight mt-1 text-[var(--ivory)]">{item.title}</h3>
-                  </div>
-
-                  {/* Card Content Bottom */}
-                  <div className="relative z-10 flex items-end justify-between mt-auto">
-                    <div>
-                      <p className="text-xs text-[#aaa69d] font-semibold tracking-wider uppercase">{item.type}</p>
-                      <p className="text-[10px] text-white/55 mt-0.5">{item.desc}</p>
-                    </div>
-                    
-                    {/* Circle button */}
-                    <div className="w-10 h-10 rounded-full bg-[var(--coral)] flex items-center justify-center text-[var(--ink)] transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                      <ArrowUpRight size={18} strokeWidth={2.5} />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* Mobile list layout */}
-            <div ref={listRef} className="md:hidden flex flex-col border-t border-white/10">
-              {careerData.map((item, index) => (
-                <Link 
-                  to="/careers"
-                  state={{ category: item.title }}
-                  key={index}
-                  className="flex items-center justify-between py-6 border-b border-white/10 group cursor-pointer"
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="text-[10px] font-mono text-[#6b6b63]">{item.num}</span>
-                    
-                    {/* Tiny thumbnail */}
-                    <div className="w-14 h-10 rounded-lg overflow-hidden border border-white/10 bg-white/5">
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+          {/* RIGHT COLUMN - Interactive 2x2 Pillar Cards Grid */}
+          <div className="lg:col-span-8 w-full">
+            <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+              {careerData.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <Link 
+                    to="/careers"
+                    state={{ category: item.title }}
+                    key={index}
+                    className="group relative flex flex-col justify-between p-7 rounded-3xl bg-[#1A1A18] border border-white/10 hover:border-[var(--coral)] transition-all duration-500 overflow-hidden min-h-[380px] shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                  >
+                    {/* Background Zoom Image with Dark Gradient Sweep */}
+                    <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl opacity-40 group-hover:opacity-75 transition-opacity duration-500">
+                      <img 
+                        src={item.img} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#111110] via-[#111110]/70 to-transparent" />
                     </div>
 
-                    <div>
-                      <h3 className="font-display text-xl font-medium text-[var(--ivory)] group-hover:text-[var(--coral)] transition-colors duration-300">
+                    {/* Card Top: Number & Icon Badge */}
+                    <div className="relative z-10 flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-[var(--coral)]">
+                        <IconComponent size={20} />
+                      </div>
+                      <span className="font-mono text-xs text-[var(--coral)] tracking-wider font-bold bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                        {item.num} / 04
+                      </span>
+                    </div>
+
+                    {/* Card Middle: Title & Tags */}
+                    <div className="relative z-10 my-auto py-6">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--coral)] block mb-1">
+                        {item.type}
+                      </span>
+                      <h3 className="font-display text-4xl font-medium tracking-tight text-[#F5F2EA] mb-2 group-hover:text-white transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-[10px] text-[#aaa69d] tracking-wide mt-0.5">{item.type} • {item.desc}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="text-[#aaa69d] group-hover:text-[var(--coral)] transition-colors duration-300">
-                    <ArrowUpRight size={20} strokeWidth={1.5} />
-                  </div>
-                </Link>
-              ))}
-            </div>
+                      <p className="text-xs text-[#A3A099] font-light leading-relaxed mb-4">
+                        {item.desc}
+                      </p>
 
+                      {/* Specialization Tags */}
+                      <div className="flex flex-wrap gap-1.5">
+                        {item.tags.map((tag, idx) => (
+                          <span 
+                            key={idx}
+                            className="text-[10px] bg-white/10 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-white/80 border border-white/10 font-mono"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Card Bottom: Action CTA Bar */}
+                    <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                      <span className="text-xs font-bold uppercase tracking-wider text-white/60 group-hover:text-[var(--coral)] transition-colors">
+                        Discover Discipline
+                      </span>
+                      
+                      <div className="w-9 h-9 rounded-full bg-[var(--coral)] text-[#111110] flex items-center justify-center transform group-hover:rotate-45 transition-transform duration-300 shadow-md">
+                        <ArrowUpRight size={18} strokeWidth={2.5} />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
         </div>
