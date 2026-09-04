@@ -18,6 +18,7 @@ import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScholarshipPopup from "./components/ScholarshipPopup";
 
 const AppContent = ({ loading, setLoading }) => {
   const location = useLocation();
@@ -50,6 +51,7 @@ const AppContent = ({ loading, setLoading }) => {
             </Routes>
           </div>
           <WhatsAppButton />
+          {isHome && <ScholarshipPopup />}
         </>
       )}
     </div>

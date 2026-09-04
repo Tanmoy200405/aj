@@ -66,10 +66,10 @@ const Scholarship = () => {
             A & J Scholarship Program
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight text-[var(--ink)] mb-4">
-            Claim Your <span className="italic text-[var(--coral)]">₹1,000</span> Grant
+            Claim Your <span className="italic text-[var(--coral)]">₹1,00,000</span> Grant
           </h1>
           <p className="text-[var(--muted)] font-body text-base md:text-lg max-w-xl mx-auto">
-            Successfully secured your college admission? Upload your admission form below and get a ₹1,000 reward directly! We will notify you via email once verified.
+            Successfully secured your college admission? Upload your admission form below and get a ₹1,00,000 reward directly! We will notify you via email once verified.
           </p>
         </div>
 
