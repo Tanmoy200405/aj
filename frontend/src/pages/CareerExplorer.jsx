@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Filter } from "lucide-react";
 import { API_BASE_URL } from "../config/api";
 
 const categoryBackgrounds = {
@@ -33,12 +33,16 @@ const CareerExplorer = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Backend offline, falling back to local catalog mockup", err);
-        // Fallback mockup
+        console.error("Backend offline, rendering client catalog", err);
         const mockCareers = [
-          { id: "software-engineering", name: "Software Engineering", category: "BUILD", short_desc: "Build the technology people use daily.", duration: "4 Years", growth: "High", skills: ["Coding", "Algorithms"], img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" },
-          { id: "data-science", name: "Data Science", category: "ANALYZE", short_desc: "Analyze and mine massive data streams.", duration: "4 Years", growth: "High", skills: ["Statistics", "Python"], img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
-          { id: "product-design", name: "Product Design", category: "CREATE", short_desc: "Design experiences that scale.", duration: "4 Years", growth: "High", skills: ["UI/UX", "Figma"], img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" }
+          { id: "software-engineering", name: "Software Engineering", category: "BUILD", short_desc: "Architect scalable software, mobile apps, and cloud infrastructure.", duration: "4 Years", growth: "32% Annual", skills: ["Coding", "Algorithms", "System Architecture"], img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" },
+          { id: "data-science", name: "Data Science & AI", category: "ANALYZE", short_desc: "Uncover insights from massive data streams to drive strategic AI innovation.", duration: "4 Years", growth: "35% Annual", skills: ["Statistics", "Python", "Machine Learning"], img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" },
+          { id: "product-design", name: "UI/UX & Product Design", category: "CREATE", short_desc: "Craft intuitive, human-centered digital experiences and physical products.", duration: "4 Years", growth: "24% Annual", skills: ["UI/UX", "Figma", "User Research"], img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" },
+          { id: "astrophysics", name: "Astrophysics & Space Research", category: "DISCOVER", short_desc: "Investigate cosmic phenomena, orbital telemetry, and space exploration.", duration: "5 Years", growth: "18% Annual", skills: ["Physics", "Mathematics", "Telemetry"], img: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=800&q=80" },
+          { id: "corporate-strategy", name: "Management & Strategy", category: "LEAD", short_desc: "Lead global enterprises through market expansion and financial scaling.", duration: "3-4 Years", growth: "28% Annual", skills: ["Strategy", "Financial Modeling", "Leadership"], img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" },
+          { id: "clinical-medicine", name: "Medicine & Surgery", category: "HELP", short_desc: "Diagnose, treat, and pioneer life-saving clinical breakthroughs for patient wellness.", duration: "5.5 Years", growth: "25% Annual", skills: ["Diagnostics", "Clinical Care", "Pathology"], img: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80" },
+          { id: "robotics-engineering", name: "Robotics & Automation", category: "BUILD", short_desc: "Design autonomous hardware systems, drones, and intelligent mechatronics.", duration: "4 Years", growth: "30% Annual", skills: ["Robotics", "Embedded Systems", "CAD"], img: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80" },
+          { id: "biotechnology", name: "Biotechnology & Genetics", category: "DISCOVER", short_desc: "Develop genomic therapies, vaccines, and bio-engineered solutions.", duration: "4 Years", growth: "22% Annual", skills: ["Genomics", "Lab Tech", "Bio-analytics"], img: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=800&q=80" }
         ];
         setCareers(mockCareers);
         setLoading(false);
@@ -50,53 +54,47 @@ const CareerExplorer = () => {
       gsap.fromTo(
         gridRef.current.children,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: "power2.out" }
       );
     }
-  }, [loading, hoveredCat]); // Re-trigger stagger animation when hoveredCat filters the list
+  }, [loading, hoveredCat]);
 
   const categories = ["ALL", "BUILD", "CREATE", "DISCOVER", "LEAD", "HELP", "ANALYZE"];
 
-  return (
-    <div className="relative min-h-screen">
-      
-      {/* 1. INTERACTIVE HERO */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-black text-[var(--ivory)] py-12">
-        {/* Background images container */}
-        <div className="absolute inset-0 z-0">
-          {Object.entries(categoryBackgrounds).map(([cat, imgUrl]) => (
-            <div
-              key={cat}
-              className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
-                hoveredCat === cat ? "opacity-45 scale-100" : "opacity-0 scale-105"
-              }`}
-              style={{ backgroundImage: `url(${imgUrl})` }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
-        </div>
+  const filteredCareers = hoveredCat === "ALL" 
+    ? careers 
+    : careers.filter(c => c.category === hoveredCat);
 
-        <div className="container relative z-10 text-center px-6">
-          <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--coral)] mb-4 block">
-            Map Your Path
+  return (
+    <div className="relative min-h-screen bg-[var(--ivory)] text-[var(--ink)]">
+      
+      {/* 1. HERO HEADER */}
+      <section className="pt-28 pb-16 px-4 md:px-8 border-b border-[var(--stone)]/50 bg-[#F4F0E8]">
+        <div className="container max-w-[1200px]">
+          <span className="text-xs font-bold text-[var(--coral)] uppercase tracking-[0.2em] block mb-3">
+            EXPLORE PATHWAYS
           </span>
-          <h1 className="font-display text-5xl md:text-8xl font-medium tracking-tight mb-6 max-w-[900px] mx-auto leading-none">
-            There are more paths<br />than you think.
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] text-[var(--ink)] mb-6">
+            Find the career <br />
+            <span className="italic text-[var(--coral)] font-light">crafted for you.</span>
           </h1>
-          <p className="text-[var(--stone)] text-base md:text-lg max-w-[580px] mx-auto mb-12 font-body font-light leading-relaxed">
-            Explore careers based on what you enjoy, how you think, and what you want to build. Hover over a discipline category below to filter your perspective.
+          <p className="text-[var(--muted)] text-sm sm:text-base max-w-[560px] leading-relaxed">
+            Browse through curated career tracks across engineering, design, scientific research, health, and corporate leadership.
           </p>
 
-          {/* Interactive categories portal */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 max-w-[800px] mx-auto border-t border-[var(--stone)]/20 pt-8">
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 mt-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mr-2 flex items-center gap-1.5">
+              <Filter size={14} className="text-[var(--coral)]" /> Discipline:
+            </span>
             {categories.map((cat) => (
               <button
                 key={cat}
-                onMouseEnter={() => setHoveredCat(cat)}
-                className={`font-display text-2xl md:text-4xl tracking-tight transition-all duration-300 ${
-                  hoveredCat === cat 
-                    ? "text-[var(--coral)] scale-110 font-medium" 
-                    : "text-white/60 hover:text-white"
+                onClick={() => setHoveredCat(cat)}
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase border transition-all duration-300 ${
+                  hoveredCat === cat
+                    ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)] shadow-sm"
+                    : "bg-white text-[var(--ink)] border-[var(--stone)] hover:border-[var(--coral)]"
                 }`}
               >
                 {cat}
@@ -106,97 +104,63 @@ const CareerExplorer = () => {
         </div>
       </section>
 
-      {/* 2. CAREER GRID SECTION */}
-      <section className="section py-24 bg-[var(--ivory)]" id="catalog">
-        <div className="container">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-[var(--stone)] pb-8">
-            <div>
-              <span className="text-xs font-bold text-[var(--coral)] tracking-wider uppercase block mb-2">
-                Discover Careers
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-medium text-[var(--ink)]">
-                The Editorial Catalog
-              </h2>
-            </div>
-            <p className="text-[var(--muted)] text-sm max-w-[340px] mt-4 md:mt-0 leading-relaxed font-body">
-              Select a specialized pathway. Learn details about the work environment, average study years, and skills.
-            </p>
-          </div>
-
+      {/* 2. CAREER CARDS GRID */}
+      <section className="py-16 px-4 md:px-8">
+        <div className="container max-w-[1200px]">
           {loading ? (
             <div className="flex items-center justify-center min-h-[300px]">
-              <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-[var(--coral)]" />
+              <div className="w-10 h-10 border-4 border-[var(--coral)] border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : filteredCareers.length === 0 ? (
+            <div className="text-center py-20 bg-white rounded-3xl border border-[var(--stone)]">
+              <p className="text-[var(--muted)] text-sm">No careers match the selected category filter.</p>
             </div>
           ) : (
-            <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {careers.filter((c) => hoveredCat === "ALL" || c.category === hoveredCat).map((career) => (
-                <div 
-                  key={career.id} 
-                  className="group flex flex-col justify-between bg-white border border-[var(--stone)] hover:border-[var(--coral)] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg p-6"
+            <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {filteredCareers.map((career) => (
+                <Link
+                  key={career.id}
+                  to={`/careers/${career.id}`}
+                  className="group relative flex flex-col justify-between bg-white rounded-3xl overflow-hidden border border-[var(--stone)] hover:border-[var(--coral)] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
                 >
-                  <div>
-                    {/* Thumbnail Image */}
-                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-6 bg-[var(--stone)]/30">
-                      <img 
-                        src={career.img} 
-                        alt={career.name} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <span className="absolute top-4 left-4 bg-[var(--ink)] text-[var(--ivory)] text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full">
-                        {career.category}
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-2xl font-medium text-[var(--ink)] mb-3">
-                      {career.name}
-                    </h3>
-                    
-                    <p className="text-[var(--muted)] text-xs leading-relaxed mb-6">
-                      {career.short_desc}
-                    </p>
-
-                    {/* Stats */}
-                    <div className="border-t border-[var(--stone)]/50 pt-4 mb-6 flex flex-col gap-2">
-                      <div className="flex justify-between text-[11px]">
-                        <span className="text-[var(--muted)]">Study Duration:</span>
-                        <span className="font-semibold text-[var(--ink)]">{career.duration}</span>
-                      </div>
-                      <div className="flex justify-between text-[11px]">
-                        <span className="text-[var(--muted)]">Market Demand:</span>
-                        <span className="font-semibold text-[var(--ink)]">{career.growth}</span>
-                      </div>
-                    </div>
-
-                    {/* Skills tags */}
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "20px" }}>
-                      {career.skills.map((skill, i) => (
-                        <span 
-                          key={i} 
-                          style={{
-                            display: "inline-block",
-                            fontSize: "10px",
-                            backgroundColor: "var(--stone)",
-                            padding: "3px 8px",
-                            borderRadius: "6px",
-                            color: "var(--ink)",
-                            fontWeight: "500"
-                          }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                  {/* Image Frame */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#EFECE6]">
+                    <img 
+                      src={career.img || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"} 
+                      alt={career.name}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    />
+                    <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-[10px] font-mono font-semibold tracking-wider text-white uppercase">
+                      {career.category}
                     </div>
                   </div>
 
-                  <Link 
-                    to={`/careers/${career.id}`} 
-                    className="flex items-center justify-between text-xs font-bold text-[var(--ink)] hover:text-[var(--coral)] group/link border-t border-[var(--stone)]/50 pt-4"
-                  >
-                    <span>EXPLORE PATHWAY</span>
-                    <ArrowRight size={14} className="transition-transform duration-300 group-hover/link:translate-x-1" />
-                  </Link>
-                </div>
+                  {/* Body Content */}
+                  <div className="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="font-display text-2xl font-medium text-[var(--ink)] mb-2 group-hover:text-[var(--coral)] transition-colors">
+                        {career.name}
+                      </h3>
+                      <p className="text-xs md:text-sm text-[var(--muted)] font-body line-clamp-2 mb-4 leading-relaxed">
+                        {career.short_desc || career.shortDesc}
+                      </p>
+                    </div>
+
+                    {/* Metadata Badges */}
+                    <div>
+                      <div className="flex items-center gap-3 pt-4 border-t border-[var(--stone)]/60 text-[11px] text-[var(--muted)] font-medium mb-4">
+                        <span>Duration: <strong className="text-[var(--ink)]">{career.duration || "4 Years"}</strong></span>
+                        <span>•</span>
+                        <span>Growth: <strong className="text-emerald-700">{career.growth || "High"}</strong></span>
+                      </div>
+
+                      <div className="btn w-full justify-between py-3 px-5 text-xs font-semibold uppercase tracking-wider group-hover:bg-[var(--coral)] group-hover:text-white group-hover:border-[var(--coral)] transition-all">
+                        <span>Explore Pathway</span>
+                        <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           )}
