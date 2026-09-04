@@ -22,7 +22,7 @@ const AppContent = ({ loading, setLoading }) => {
   const isHome = location.pathname === "/";
 
   return (
-    <div className="relative min-h-screen selection:bg-[var(--coral)] selection:text-[var(--white)] bg-[#09090B] text-[#F5F2EA]">
+    <div className="relative min-h-screen selection:bg-[var(--coral)] selection:text-[var(--white)] bg-[var(--ivory)] text-[var(--ink)]">
       <ScrollToTop />
       <Cursor />
       {loading ? (

@@ -7,7 +7,6 @@ const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,37 +14,42 @@ const Nav = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Explore Careers", href: "/careers" },
-    { name: "Career Quiz", href: "/quiz" },
-    { name: "Roadmaps", href: "/roadmap" },
+    { name: "Explore", href: "/" },
+    { name: "Careers", href: "/careers" },
+    { name: "Colleges", href: "/colleges" },
+    { name: "Courses", href: "/courses" },
+    { name: "Quiz", href: "/quiz" },
+    { name: "Compare", href: "/compare" },
+    { name: "Roadmap", href: "/roadmap" },
     { name: "Resources", href: "/resources" },
+    { name: "About", href: "/about" },
   ];
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? "scrolled" : ""} ${isHome ? "is-home-nav text-[#F3EBDD]" : ""}`}>
-        <div className="nav-container">
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <div className="nav-container max-w-[1400px] mx-auto px-4 md:px-8">
 
           {/* Logo */}
-          <Link to="/" className="logo flex items-center gap-1.5 sm:gap-3">
-            <img src={logo} alt="A & J Career Guidance" className="h-9 sm:h-12 md:h-14 w-auto object-contain rounded-xl shadow-md border border-[var(--stone)]/60" />
-            <span className={`font-display tracking-wide text-xs sm:text-base md:text-xl lg:text-2xl font-semibold whitespace-nowrap ${isHome ? "text-[#F3EBDD]" : "text-[var(--ink)]"}`}>A & J Career Guidance</span>
+          <Link to="/" className="logo flex items-center gap-2 sm:gap-3">
+            <img src={logo} alt="A & J Career Guidance" className="h-9 sm:h-11 md:h-12 w-auto object-contain rounded-xl shadow-sm border border-[var(--stone)]/60" />
+            <span className="font-display tracking-wide text-sm sm:text-base md:text-lg lg:text-xl font-semibold whitespace-nowrap text-[var(--ink)]">
+              A & J Career Guidance
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex nav-links items-center">
+          <div className="hidden xl:flex nav-links items-center gap-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.href}
                 className={({ isActive }) => 
-                  `nav-link ${isActive ? "text-[var(--coral)] border-b border-[var(--coral)] font-semibold" : ""} font-sans text-xs tracking-widest uppercase`
+                  `nav-link ${isActive ? "text-[var(--coral)] font-semibold" : "text-[var(--ink)]/80"} font-sans text-xs tracking-wider uppercase transition-colors duration-200`
                 }
               >
                 {link.name}
@@ -53,8 +57,8 @@ const Nav = () => {
             ))}
 
             <Link
-              to="/careers"
-              className="btn btn-dark group font-sans text-xs tracking-widest uppercase py-3.5 px-6"
+              to="/contact"
+              className="btn btn-dark group font-sans text-xs tracking-wider uppercase py-3 px-5 rounded-full ml-2"
               style={{
                 background: "var(--ink)",
                 color: "var(--ivory)",
@@ -64,14 +68,14 @@ const Nav = () => {
                 gap: "0.5rem"
               }}
             >
-              Start Exploring
+              Consult Counselor
               <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden flex items-center justify-center ${isHome ? "text-[#F5F2EA]" : "text-[var(--ink)]"}`}
+            className="xl:hidden flex items-center justify-center text-[var(--ink)] p-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -85,7 +89,7 @@ const Nav = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Overlay Menu */}
       <div
         className={`
           fixed inset-0 z-[90]
@@ -120,9 +124,9 @@ const Nav = () => {
                 onClick={() => setMenuOpen(false)}
                 className="
                   border-b border-white/10
-                  py-4.5
+                  py-3.5
                   font-display
-                  text-3xl
+                  text-2xl
                   tracking-tight
                   transition-colors
                   hover:text-[#FF5B45]
@@ -138,10 +142,10 @@ const Nav = () => {
 
           {/* Mobile CTA */}
           <Link
-            to="/careers"
+            to="/contact"
             onClick={() => setMenuOpen(false)}
             className="
-              mt-10
+              mt-8
               flex
               w-fit
               items-center
@@ -155,7 +159,7 @@ const Nav = () => {
               text-[#111111]
             "
           >
-            Start Exploring
+            Consult Counselor
             <ArrowRight size={17} />
           </Link>
         </div>
