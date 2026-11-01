@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Cog, PenTool, Beaker, BarChart3, BookOpen, Plus, Minus, ArrowRight, Sparkles } from "lucide-react";
@@ -6,6 +7,7 @@ import { Cog, PenTool, Beaker, BarChart3, BookOpen, Plus, Minus, ArrowRight, Spa
 gsap.registerPlugin(ScrollTrigger);
 
 const DecisionTree = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const treeRef = useRef(null);
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -156,13 +158,13 @@ const DecisionTree = () => {
               </p>
             </div>
             
-            <a 
-              href="#careers" 
+            <Link 
+              to="/careers" 
               className="tree-text mt-12 lg:mt-24 inline-flex items-center gap-3 text-[var(--ink)] font-semibold text-xs tracking-widest uppercase hover:text-[var(--coral)] hover:gap-4 transition-all duration-300 w-fit pb-2 border-b border-[var(--ink)] hover:border-[var(--coral)]"
             >
               View all career paths 
               <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
 
           {/* RIGHT PANEL - GRAPH TREE (Desktop) */}
@@ -194,7 +196,10 @@ const DecisionTree = () => {
                   <div key={cat.id} className="tree-node flex flex-col items-center group">
                     
                     {/* Icon & Title Header (Pill) */}
-                    <div className="flex flex-col items-center justify-center p-4 w-full bg-white rounded-3xl border border-[var(--stone)] shadow-sm group-hover:border-[var(--coral)] group-hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1">
+                    <div 
+                      onClick={() => navigate("/careers", { state: { category: cat.title } })}
+                      className="flex flex-col items-center justify-center p-4 w-full bg-white rounded-3xl border border-[var(--stone)] shadow-sm group-hover:border-[var(--coral)] group-hover:shadow-md transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
+                    >
                       <div className="mb-2 w-10 h-10 rounded-full bg-[var(--ivory)] border border-[var(--stone)]/30 flex items-center justify-center">
                         {cat.icon}
                       </div>
@@ -211,6 +216,7 @@ const DecisionTree = () => {
                       {cat.fields.map((field, idx) => (
                         <div 
                           key={idx}
+                          onClick={() => navigate("/careers")}
                           className="px-4 py-3 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--ink)] hover:bg-[var(--ivory)] cursor-pointer transition-colors duration-200 border-b border-[var(--stone)]/30 last:border-b-0 flex items-center justify-between"
                         >
                           {field}

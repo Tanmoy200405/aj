@@ -140,7 +140,7 @@ const StoryBrand = () => {
               Core Principles
             </span>
             <h3 className="font-display text-2xl md:text-4xl font-medium text-[var(--ink)]">
-              The A & J Standard
+              The AJ Standard
             </h3>
           </div>
 

@@ -145,7 +145,7 @@ const Courses = () => {
             Confused About Your Options?
           </h3>
           <p className="text-xs text-[var(--muted)] max-w-md mx-auto leading-relaxed mb-8">
-            Speak to a certified career advisor at A & J Career Guidance to identify the ideal program matched to your personality and future career trajectory.
+            Speak to a certified career advisor at AJ Career Guidance to identify the ideal program matched to your personality and future career trajectory.
           </p>
           <Link
             to="/contact"

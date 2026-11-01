@@ -198,7 +198,7 @@ const CareerQuiz = () => {
           <div className="py-20 flex flex-col items-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--coral)] mb-6" />
             <h2 className="font-display text-2xl font-medium text-[var(--ink)]">Analyzing Your Selections...</h2>
-            <p className="text-[var(--muted)] text-xs mt-2">Computing personality index via A & J Career Guidance Recommendation Engine</p>
+            <p className="text-[var(--muted)] text-xs mt-2">Computing personality index via AJ Career Guidance Recommendation Engine</p>
           </div>
         )}
 

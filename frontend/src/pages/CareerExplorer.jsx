@@ -1,17 +1,78 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
-import { ArrowRight, Sparkles, Filter } from "lucide-react";
+import { ArrowRight, Sparkles, Filter, TrendingUp, CheckCircle2 } from "lucide-react";
 import { API_BASE_URL } from "../config/api";
 
-const categoryBackgrounds = {
-  ALL: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-  BUILD: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=80",
-  CREATE: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",
-  DISCOVER: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1200&q=80",
-  LEAD: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-  HELP: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80",
-  ANALYZE: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+import imgBuild from "../assets/career_build.png";
+import imgCreate from "../assets/career_create.png";
+import imgDiscover from "../assets/career_discover.png";
+import imgLead from "../assets/career_lead.png";
+
+const categoryMeta = {
+  ALL: {
+    title: "Multidisciplinary Excellence",
+    subtitle: "Cross-stream career potential across tech, design, science & management",
+    salary: "₹7 - ₹35 LPA Avg",
+    growth: "High Demand Sector",
+    badge: "500+ Pathways",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    tags: ["Cross-Discipline", "High Demand", "Global Scope"]
+  },
+  BUILD: {
+    title: "Engineering & Deep Systems",
+    subtitle: "AI architectures, robotics, cloud infrastructure, and autonomous systems",
+    salary: "₹8 - ₹32 LPA Avg",
+    growth: "+34% Annual Demand",
+    badge: "Technology Vanguard",
+    image: imgBuild,
+    tags: ["AI & Cloud", "Robotics", "Autonomous Tech"]
+  },
+  CREATE: {
+    title: "Design & Immersive Media",
+    subtitle: "UI/UX, digital product architecture, 3D CGI and visual direction",
+    salary: "₹6 - ₹24 LPA Avg",
+    growth: "+31% Annual Demand",
+    badge: "Creative Impact",
+    image: imgCreate,
+    tags: ["Product Design", "Human Interface", "Creative Media"]
+  },
+  DISCOVER: {
+    title: "Science & Frontier Research",
+    subtitle: "Biotechnology, genomics, clinical analytics & data modeling",
+    salary: "₹8 - ₹30 LPA Avg",
+    growth: "+26% Annual Demand",
+    badge: "Frontier Science",
+    image: imgDiscover,
+    tags: ["Genomics", "Biotech", "Astrophysics"]
+  },
+  LEAD: {
+    title: "Business Strategy & Venture",
+    subtitle: "Executive leadership, venture finance, analytics & global markets",
+    salary: "₹7 - ₹28 LPA Avg",
+    growth: "+28% Annual Demand",
+    badge: "Corporate Leadership",
+    image: imgLead,
+    tags: ["Venture Capital", "Corporate Strategy", "Fintech"]
+  },
+  HELP: {
+    title: "Medicine & Clinical Healthcare",
+    subtitle: "Surgery, allied healthcare, clinical diagnostics & patient wellness",
+    salary: "₹9 - ₹35 LPA Avg",
+    growth: "+29% Annual Demand",
+    badge: "Essential Care",
+    image: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80",
+    tags: ["Clinical Medicine", "Diagnostics", "Public Health"]
+  },
+  ANALYZE: {
+    title: "Data Intelligence & Quantitative Systems",
+    subtitle: "Predictive AI modeling, data telemetry & algorithmic decision systems",
+    salary: "₹8 - ₹30 LPA Avg",
+    growth: "+36% Annual Demand",
+    badge: "Quantitative Apex",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    tags: ["Machine Learning", "Algorithmic Systems", "Big Data"]
+  }
 };
 
 const CareerExplorer = () => {
@@ -65,41 +126,125 @@ const CareerExplorer = () => {
     ? careers 
     : careers.filter(c => c.category === hoveredCat);
 
+  const currentMeta = categoryMeta[hoveredCat] || categoryMeta.ALL;
+
   return (
     <div className="relative min-h-screen bg-[var(--ivory)] text-[var(--ink)]">
       
-      {/* 1. HERO HEADER */}
-      <section className="pt-28 pb-16 px-4 md:px-8 border-b border-[var(--stone)]/50 bg-[#F4F0E8]">
-        <div className="container max-w-[1200px]">
-          <span className="text-xs font-bold text-[var(--coral)] uppercase tracking-[0.2em] block mb-3">
-            EXPLORE PATHWAYS
-          </span>
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] text-[var(--ink)] mb-6">
-            Find the career <br />
-            <span className="italic text-[var(--coral)] font-light">crafted for you.</span>
-          </h1>
-          <p className="text-[var(--muted)] text-sm sm:text-base max-w-[560px] leading-relaxed">
-            Browse through curated career tracks across engineering, design, scientific research, health, and corporate leadership.
-          </p>
+      {/* 1. HERO HEADER WITH IMAGERY */}
+      <section className="pt-28 pb-16 px-4 md:px-8 border-b border-[var(--stone)]/50 bg-[#F4F0E8] overflow-hidden">
+        <div className="container max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column: Heading, Subtitle & Discipline Selector */}
+            <div className="lg:col-span-7">
+              <span className="text-xs font-bold text-[var(--coral)] uppercase tracking-[0.2em] block mb-3">
+                EXPLORE PATHWAYS
+              </span>
+              <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] text-[var(--ink)] mb-6">
+                Find the career <br />
+                <span className="italic text-[var(--coral)] font-light">crafted for you.</span>
+              </h1>
+              <p className="text-[var(--muted)] text-sm sm:text-base max-w-[560px] leading-relaxed mb-8">
+                Browse through curated career tracks across engineering, design, scientific research, health, and corporate leadership.
+              </p>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 mt-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mr-2 flex items-center gap-1.5">
-              <Filter size={14} className="text-[var(--coral)]" /> Discipline:
-            </span>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setHoveredCat(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase border transition-all duration-300 ${
-                  hoveredCat === cat
-                    ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)] shadow-sm"
-                    : "bg-white text-[var(--ink)] border-[var(--stone)] hover:border-[var(--coral)]"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+              {/* Category Filter Pills */}
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted)] mb-3 flex items-center gap-1.5">
+                  <Filter size={14} className="text-[var(--coral)]" /> Discipline:
+                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setHoveredCat(cat)}
+                      className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase border transition-all duration-300 cursor-pointer ${
+                        hoveredCat === cat
+                          ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)] shadow-md scale-105"
+                          : "bg-white text-[var(--ink)] border-[var(--stone)] hover:border-[var(--coral)] hover:bg-[var(--ivory)]"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick stats ticker below pills */}
+              <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-[var(--stone)]/60 text-xs text-[var(--muted)]">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Sparkles size={14} className="text-[var(--coral)]" />
+                  <strong className="text-[var(--ink)]">{filteredCareers.length} Specialized Roles</strong> Mapped
+                </span>
+                <span>•</span>
+                <span>Average Compensation: <strong className="text-[var(--ink)]">{currentMeta.salary}</strong></span>
+                <span>•</span>
+                <span className="text-emerald-700 font-semibold">{currentMeta.growth}</span>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Photographic Showcase */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--stone)] shadow-2xl bg-white group">
+                <img 
+                  key={hoveredCat}
+                  src={currentMeta.image} 
+                  alt={currentMeta.title} 
+                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 animate-in fade-in zoom-in-95 duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                
+                {/* Floating Top Badge */}
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/60 shadow-md flex items-center gap-2">
+                  <Sparkles size={12} className="text-[var(--coral)]" />
+                  <span className="text-[10px] font-mono tracking-wider text-[var(--ink)] uppercase font-bold">
+                    {currentMeta.badge}
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Info */}
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--coral)] font-bold block mb-1">
+                    {hoveredCat} TRACK FOCUS
+                  </span>
+                  <h3 className="font-display text-xl sm:text-2xl font-medium text-white mb-1">
+                    {currentMeta.title}
+                  </h3>
+                  <p className="text-xs text-white/80 line-clamp-1 mb-3">
+                    {currentMeta.subtitle}
+                  </p>
+                  
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {currentMeta.tags.map((tag, i) => (
+                      <span key={i} className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-semibold text-white">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Overlapping Small Card */}
+              <div className="hidden sm:flex absolute -bottom-5 -left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-[var(--stone)] shadow-xl items-center gap-3 max-w-[240px] z-10">
+                <div className="w-10 h-10 rounded-xl bg-[var(--coral)]/10 text-[var(--coral)] flex items-center justify-center shrink-0">
+                  <TrendingUp size={20} />
+                </div>
+                <div>
+                  <span className="text-[9px] font-mono uppercase text-[var(--muted)] font-bold block">
+                    Target Compensation
+                  </span>
+                  <strong className="text-xs font-bold text-[var(--ink)] block">
+                    {currentMeta.salary}
+                  </strong>
+                  <span className="text-[9px] text-emerald-700 font-semibold block">
+                    Direct Tier-1 Placement
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
       </section>

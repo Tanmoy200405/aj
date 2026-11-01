@@ -7,7 +7,7 @@ const Preloader = ({ onComplete }) => {
   const textContainerRef = useRef(null);
   const progressLineRef = useRef(null);
 
-  const words = ["DREAM", "DESIGN", "ACHIEVE", "A & J"];
+  const words = ["DREAM", "DESIGN", "ACHIEVE", "AJ"];
 
   useEffect(() => {
     // Disable body scroll during preload
@@ -88,7 +88,7 @@ const Preloader = ({ onComplete }) => {
       {/* Top Section: Brand Identity */}
       <div className="flex justify-between items-center w-full">
         <span className="text-[10px] font-mono tracking-[4px] text-[var(--stone)] uppercase">
-          A & J Career Guidance
+          AJ Career Guidance
         </span>
         <span className="text-[10px] font-mono tracking-[4px] text-[var(--coral)] uppercase">
           Bespoke Advisory
@@ -102,9 +102,9 @@ const Preloader = ({ onComplete }) => {
             key={index} 
             className="preload-word absolute font-display text-5xl md:text-8xl lg:text-9xl font-light tracking-tight text-[var(--ivory)]"
           >
-            {word === "A & J" ? (
+            {word === "AJ" ? (
               <>
-                A <span className="font-display italic text-[var(--coral)]">&</span> J
+                A<span className="font-display italic text-[var(--coral)]">J</span>
               </>
             ) : (
               word

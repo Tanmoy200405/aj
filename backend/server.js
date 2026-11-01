@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ message: "A & J Career Guidance API is running." });
+  res.json({ message: "AJ Career Guidance API is running." });
 });
 
 app.get("/api/health", (req, res) => {

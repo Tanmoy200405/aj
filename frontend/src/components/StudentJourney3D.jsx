@@ -647,13 +647,13 @@ const StudentJourney3D = () => {
                 Perfect <span className="italic text-[#ffb800]">Secure Admission</span>
               </h3>
               <p className="text-xs text-stone-400 font-light leading-relaxed">
-                Rohan secures tier-one admissions under professional A & J mentorship. Scientific guidance bridges talent directly with industry requirements.
+                Rohan secures tier-one admissions under professional AJ mentorship. Scientific guidance bridges talent directly with industry requirements.
               </p>
               <a 
-                href="#quiz" 
+                href="/roadmap" 
                 className="mt-2 text-center py-3 bg-[#ffb800] hover:bg-white hover:text-black transition-colors duration-300 text-xs font-semibold text-black uppercase tracking-wider rounded-xl"
               >
-                Map My Career Path
+                Explore Career Roadmap
               </a>
             </div>
           )}

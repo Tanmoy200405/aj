@@ -30,7 +30,7 @@ const Nav = () => {
     { name: "Careers", href: "/careers" },
     { name: "Colleges", href: "/colleges" },
     { name: "Courses", href: "/courses" },
-    { name: "Quiz", href: "/quiz" },
+    { name: "Roadmap", href: "/roadmap" },
     { name: "Compare", href: "/compare" },
     { name: "Scholarship", href: "/scholarship" },
     { name: "About", href: "/about" },
@@ -45,11 +45,11 @@ const Nav = () => {
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 text-[var(--ink)]">
             <img 
               src={logo} 
-              alt="A & J Career Guidance Logo" 
+              alt="AJ Career Guidance Logo" 
               className="w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-full border border-[var(--stone)]/80 shadow-sm shrink-0" 
             />
             <span className="font-display text-sm sm:text-base md:text-lg font-bold tracking-tight text-[var(--ink)] shrink-0">
-              A & J Career Guidance
+              AJ Career Guidance
             </span>
           </Link>
 
@@ -108,11 +108,11 @@ const Nav = () => {
           <Link to="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 shrink-0 text-[#F5F2EA]">
             <img 
               src={logo} 
-              alt="A & J Career Guidance Logo" 
+              alt="AJ Career Guidance Logo" 
               className="w-8 h-8 object-cover rounded-full border border-white/20 shrink-0" 
             />
             <span className="font-display text-sm sm:text-base font-bold tracking-tight text-[#F5F2EA] shrink-0">
-              A & J Career Guidance
+              AJ Career Guidance
             </span>
           </Link>
 

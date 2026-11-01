@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Youtube, Twitter, ArrowRight, Plus, Minus } from "lucide-react";
 import logo from "../assets/logo.jpeg";
 
@@ -13,28 +14,28 @@ const Footer = () => {
     explore: {
       title: "EXPLORE",
       links: [
-        { name: "Careers", href: "#careers" },
-        { name: "Colleges", href: "#colleges" },
-        { name: "Career Quiz", href: "#quiz" },
-        { name: "Career Paths", href: "#careers" },
+        { name: "Careers", href: "/careers" },
+        { name: "Colleges", href: "/colleges" },
+        { name: "Career Roadmap", href: "/roadmap" },
+        { name: "Compare Careers", href: "/compare" },
       ],
     },
     resources: {
       title: "RESOURCES",
       links: [
-        { name: "Guides", href: "#" },
-        { name: "Articles", href: "#" },
-        { name: "Webinars", href: "#" },
-        { name: "Blogs", href: "#" },
+        { name: "Academic Courses", href: "/courses" },
+        { name: "Career Roadmap", href: "/roadmap" },
+        { name: "Knowledge Hub", href: "/resources" },
+        { name: "Scholarship Program", href: "/scholarship" },
       ],
     },
     company: {
       title: "COMPANY",
       links: [
-        { name: "About Us", href: "#about" },
-        { name: "Our Mission", href: "#" },
-        { name: "Contact Us", href: "#" },
-        { name: "Careers", href: "#careers" },
+        { name: "About Us", href: "/about" },
+        { name: "Our Methodology", href: "/about" },
+        { name: "Book Counseling", href: "/contact" },
+        { name: "Contact Counselors", href: "/contact" },
       ],
     },
   };
@@ -60,13 +61,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 items-start lg:items-end">
               <span className="text-xs tracking-[0.2em] font-semibold text-white/40 uppercase">Take the first step today.</span>
               
-              <a 
-                href="#careers" 
-                className="btn group" 
+              <Link 
+                to="/careers" 
+                className="btn btn-coral group" 
                 style={{
-                  background: "var(--coral)",
-                  border: "none",
-                  color: "var(--ink)",
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.5rem",
@@ -76,7 +74,7 @@ const Footer = () => {
               >
                 Start Your Journey
                 <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </div>
 
           </div>
@@ -95,8 +93,8 @@ const Footer = () => {
             <div className="flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <img src={logo} alt="A & J Career Guidance" className="h-20 w-auto object-contain rounded-2xl shadow-lg border border-white/10" />
-                  <span className="font-display text-3xl font-semibold tracking-wide text-[var(--ivory)]">A & J Career Guidance</span>
+                  <img src={logo} alt="AJ Career Guidance" className="h-20 w-auto object-contain rounded-2xl shadow-lg border border-white/10" />
+                  <span className="font-display text-3xl font-semibold tracking-wide text-[var(--ivory)]">AJ Career Guidance</span>
                 </div>
                 <p className="mt-4 text-[#aaa69d] text-sm leading-relaxed max-w-[280px]">
                   Your future starts here. Personal career mentoring for students after 12th.
@@ -134,12 +132,12 @@ const Footer = () => {
                     <ul className="flex flex-col gap-4.5">
                       {section.links.map((link, idx) => (
                         <li key={idx}>
-                          <a 
-                            href={link.href} 
+                          <Link 
+                            to={link.href} 
                             className="text-[#aaa69d] hover:text-[var(--coral)] text-xs font-semibold tracking-wide transition-colors duration-200"
                           >
                             {link.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -174,12 +172,12 @@ const Footer = () => {
                         <ul className="flex flex-col gap-3.5 pl-2 pb-4">
                           {section.links.map((link, idx) => (
                             <li key={idx}>
-                              <a 
-                                href={link.href} 
+                              <Link 
+                                to={link.href} 
                                 className="text-[#aaa69d] hover:text-[var(--coral)] text-xs transition-colors duration-200"
                               >
                                 {link.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -222,11 +220,11 @@ const Footer = () => {
 
           {/* BOTTOM SUBBAR */}
           <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/5 text-[10px] text-[#6b6b63] font-semibold tracking-wider uppercase">
-            <span className="mb-4 sm:mb-0">© 2026 A & J Career Guidance. All rights reserved.</span>
+            <span className="mb-4 sm:mb-0">© 2026 AJ Career Guidance. All rights reserved.</span>
             
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-[var(--coral)] transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="hover:text-[var(--coral)] transition-colors duration-200">Terms & Conditions</a>
+              <Link to="/about" className="hover:text-[var(--coral)] transition-colors duration-200">About Guidance</Link>
+              <Link to="/contact" className="hover:text-[var(--coral)] transition-colors duration-200">Contact Counselor</Link>
             </div>
           </div>
 

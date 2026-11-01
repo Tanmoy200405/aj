@@ -1,6 +1,6 @@
-# A & J Career Guidance - Frontend
+# AJ Career Guidance - Frontend
 
-This is the frontend React application for A & J Career Guidance, built with React, Vite, Tailwind CSS, and Lucide Icons.
+This is the frontend React application for AJ Career Guidance, built with React, Vite, Tailwind CSS, and Lucide Icons.
 
 ## Features
 - Interactive Career Explorer & Editorial Catalog

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KR7L7VR');</script>
+    <!-- End Google Tag Manager -->
+
+    <title> Not Found - BIBS</title>
+    <link rel="icon" href="https://www.bibs.co.in/front/img/Short-Logo-Black.png" type="image/png" sizes="16x16">
+
+    <meta name="description"
+      content=" AICTE Approved Top GOVT. MBA College in Kolkata. Regular Full –Time MBA Programme affiliated to Vidyasagar University, A NAAC Accredited. ">
+    <meta name="keywords"
+      content=" aicte approved mba colleges in west Bengal, govt mba colleges in Kolkata, management colleges in Kolkata ">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Owl Carousel2/2.2.1/assets/owl.theme.default.min.css"
+      rel="stylesheet">
+    <!-- jquery.min.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://www.bibs.co.in/front/css/magnific-popup.css" />
+
+    <link href="https://www.bibs.co.in/packages/toastr/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://www.bibs.co.in/front/css/custom.css?v=6.0" />
+
+    <style type="text/css">
+      .error {
+        color: red;
+      }
+    </style>
+
+
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR7L7VR" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+    <header>
+      <div class="container">
+        <div class="row sm-hidden">
+          <!-- <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                      <div class="contact text-center">
+                          <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;<span>+91 9836300046</span></p>
+                          <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<span>info@bibs.co.in</span></p>
+                      </div>
+                  </div> -->
+          <!-- <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                      <div class="row">
+                          <img src="front/img/awards1a-01.jpg" alt="awards1a-01" class="img-responsive award" />
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                      <div class="logo">
+                          <a href="https://www.bibs.co.in"><img src="front/img/Short-Logo-Black.png" alt="header-logo" class="img-responsive" /></a>
+                      </div>
+                  </div> -->
+          <div class="col-lg-12 col-md-12">
+            <a href="https://www.bibs.co.in" class="text-center"><img
+                src="https://www.bibs.co.in/front/img/awards-02.jpg" alt="header-logo" class="img-responsive"
+                style="width: 100%;" /></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-md  navbar-light bg-light">
+
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.bibs.co.in">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" id="about" href="#" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">ABOUT US <span>&#9660;</span></a>
+                    <div class="dropdown-menu " aria-labelledby="about">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/about-us">ABOUT BIBS</a>
+
+
+
+                      <a class="dropdown-item" href="https://www.bibs.co.in/core-faculty">CORE ACADEMIC TEAM</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/awards-and-recognition">AWARDS AND
+                        RECOGNITION</a>
+
+                      <a class="dropdown-item" href="https://www.bibs.co.in/affiliation">UNIVERSITY AFFILIATION</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/newsroom">NEWSROOM</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="course" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">COURSES <span>&#9660;</span></a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="course">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/pgpbm-and-mba-in-business-management">MBA
+                        AND PGPBM (BUSINESS MANAGEMENT)</a>
+                      <a class="dropdown-item"
+                        href="https://www.bibs.co.in/mba-in-industry-integrated-business-management">MBA AND PGPIBM
+                        (INDUSTRY INTEGRATED BUSINESS MANAGEMENT)</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/mba-in-digital-marketing-pgpdm-course">MBA
+                        AND PGPDM (DIGITAL MARKETING)</a>
+                      <!--<a class="dropdown-item" href="https://www.bibs.co.in/mba-in-financial-markets">MBA AND PGPFM (FINANCIAL MARKETS)</a>-->
+                      <a class="dropdown-item" href="https://www.bibs.co.in/pgp-in-financial-management-and-banking">MBA
+                        AND PGPFB (FINANCIAL MANAGEMENT AND BANKING)</a>
+                      <a class="dropdown-item"
+                        href="https://www.bibs.co.in/post-graduate-programme-in-executive-management">MBA AND PGPEX
+                        (EXECUTIVE MANAGEMENT)</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="placement" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">PLACEMENTS <span>&#9660;</span></a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="placement">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/why-companies-recruit-at-bibs">WHY COMPANIES
+                        RECRUIT AT BIBS</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/placement-process">PLACEMENT PROCESS</a>
+                      <!-- <a class="dropdown-item" href="placement-preparatory-program">PLACEMENT PREPARATORY PROGRAM</a> -->
+                      <a class="dropdown-item" href="https://www.bibs.co.in/final-placement">FINAL PLACEMENT</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/summer-placement">SUMMER PLACEMENT</a>
+
+                      <a class="dropdown-item" href="https://www.bibs.co.in/industry-visit">INDUSTRY VISIT</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/recruiters-speak">RECRUITERS SPEAK</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/international-placement">INTERNATIONAL
+                        PLACEMENT</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="industry" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">INDUSTRY <span>&#9660;</span></a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="industry">
+                      <!-- <a class="dropdown-item" href="industry-academic-advisory-council">INDUSTRY ACADEMIC ADVISORY COUNCIL</a> -->
+                      <a class="dropdown-item" href="https://www.bibs.co.in/industry-faculty">INDUSTRY FACULTY</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/tie-ups">TIE-UPS</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/corporate-mentors">CORPORATE TIE-UPS</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/mgis-events-and-ceo-conclave">MGIS EVENTS
+                        AND CEO CONCLAVE</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/dignitaries-at-bibs">DIGNITARIES AT BIBS</a>
+                    </div>
+                  </li>
+                  <!-- <li class="nav-item dropdown dmenu">
+                              <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                CORPORATE 
+                              </a>
+                              <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="corporate-mentors">CORPORATE MENTORS</a>
+                                <a class="dropdown-item" href="management-guest-inspire-series">MGIS-INTRO</a>
+                                <a class="dropdown-item" href="mgis-events">MGIS EVENTS</a>
+                                <a class="dropdown-item" href="dr-apj-abdul-kalambibs">APJ @BIBS</a>
+                                <a class="dropdown-item" href="kapil-dev-inspires-management-students">KAPIL DEV @BIBS</a>
+                                <a class="dropdown-item" href="bibs-organises-motivational-talk-with-renowned-author-chetan-bhagat">CHATAN BHAGAT 2 BIBS</a>
+                                <a class="dropdown-item" href="ceo-conclave-2017">CEO CONCLAVE</a>
+                                <a class="dropdown-item" href="corporate-campus">CORPORATE @ CAMPUS</a>
+                              </div>
+                            </li> -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="bibs" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">LIFE AT BIBS <span>&#9660;</span></a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="bibs">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/events-at-bibs">EVENTS @ BIBS</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/clubs-at-bibs-2">CLUBS @ BIBS</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/foreign-language-trainer">FOREIGN
+                        LANGUAGE</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/gallery">GALLERY</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/newsroom">NEWSROOM</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="alumni" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">ALUMNI <span>&#9660;</span></a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="alumni">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/alumni-registration">ALUMNI REGISTRATION</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/alumni-speak">ALUMNI SPEAK</a>
+                      <a class="dropdown-item" href="https://www.bibs.co.in/convocation">CONVOCATION</a>
+                      <!-- <a class="dropdown-item" href="foreign-language-trainer">FOREIGN LANGUAGE</a> -->
+                    </div>
+                  </li>
+                  <!-- <li class="nav-item dropdown dmenu">
+                              <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">BIBS ADVANTAGES</a>
+                               <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="admission-procedure">ADMISSION PROCEDURE</a>
+                                <a class="dropdown-item" href="front/img/pdf/Final-Pre-Bro-for-online.pdf" target="_blank">BIBS BROCHURE</a>
+                                <a class="dropdown-item" href="front/img/pdf/2019-App-Form.pdf" target="_blank">APPLICATION FORM</a>
+                              </div>
+                            </li>  -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="bibs-advantage">BIBS ADVANTAGES</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link nav-last" href="#" id="admission" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" role="button">ADMISSION <span>&#9660;</span></a>
+                    <div class="dropdown-menu" aria-labelledby="admission">
+                      <a class="dropdown-item" href="https://www.bibs.co.in/admission-procedure">ADMISSION PROCEDURE</a>
+                      <a class="dropdown-item" href="#apply">BIBS BROCHURE</a>
+                      <!--<a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#myModal">APPLICATION FORM</a>-->
+                      <a class="dropdown-item" href="https://www.bibs.co.in/front/img/pdf/2020 App Form.pdf"
+                        target="_blank[]">APPLICATION FORM</a>
+                    </div>
+                  </li>
+                  <!-- <li class="nav-item">
+                              <a class="nav-link" href="blog" target="_block">BLOG</a>
+                            </li> -->
+                  <!-- <li class="nav-item">
+                              <a class="nav-link nav-last" href="convocation">CONVOCATION</a>
+                            </li> -->
+                  <!-- <li class="nav-item">
+                              <a class="nav-link" href="newsroom" target="_block">NEWSROOM</a>
+                            </li> -->
+                  <!-- <li class="nav-item">
+                              <a class="nav-link nav-last" href="contact">CONTACT US</a>
+                            </li> -->
+                </ul>
+                <div class="social-part social-sm-hidden">
+                  <a href="https://www.bibs.co.in/contact-us" class="nav-item nav-link enquire"><i
+                      class="fa fa-paper-plane" aria-hidden="true"></i>CONTACT US</a>
+                </div>
+                <!-- <div class="social-part social-sm-hidden">
+                              <a href="#enquire" class="nav-item nav-link enquire"><i class="fa fa-paper-plane" aria-hidden="true"></i>ENQUIRE NOW</a>
+                            </div> -->
+              </div>
+              <a class="navbar-brand visible-xs hidden-bg" href="https://www.bibs.co.in"
+                style="padding: 2px;position: absolute;right: 0px;top: 6px;">
+                <img src="https://www.bibs.co.in/front/img/Short-Logo-Black.png" class="logo-xs" alt="Logo"
+                  style="width: 60px;" />
+              </a>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <script>
+      // Initialize tooltip component
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      });
+
+      // Initialize popover component
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      });
+    </script>
+
+
+    <section id="section-area-padding">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- <div class="col-lg-12"> -->
+          <div class="heading">
+            <img src="https://www.bibs.co.in/front/img/academy.jpg" alt="Not Found" class="img-responsive">
+            <div class="overlay">
+              <div class="container">
+                <div class="title title-top-one" style="margin-top: 20px;">
+                  <article>404 Not Found</article>
+                  <!-- <i class="fa fa-long-arrow-right" aria-hidden="true"></i> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="https://www.bibs.co.in">Home</a></li>
+            <!-- <li class="breadcrumb-item"><a href="#">Library</a></li> -->
+            <li class="breadcrumb-item active" aria-current="page">Not Found</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+
+    <div class="footer-call">
+      <p><a href="tel: +91 98363 00046" style="color: #ffffff;text-decoration: none;"><i class="fa fa-phone"
+            aria-hidden="true"></i>&nbsp;&nbsp;<span>+91 9836300046</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a
+            href="#enquire">Enquire</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="#apply">Brochure</a></span></p>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- jquery validation link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="https://www.bibs.co.in/front/js/jquery.youtube-background.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery('[data-youtube]').youtube_background();
+      });
+    </script>
+
+    <!-- <script type="text/javascript" src="js/owl.carousel.js"></script> -->
+
+    <script src="https://www.bibs.co.in/front/js/owl.carousel.min.js"></script>
+
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.bibs.co.in/front/js/jquery.magnific-popup.js"></script>
+    <script src="https://www.bibs.co.in/front/js/magnific.js?v=5.0"></script>
+
+    <script src="https://www.bibs.co.in/front/js/newsroom.js?v=5.0"></script>
+
+    <script src="https://www.bibs.co.in/front/js/liquid.js"></script>
+
+    <script src="https://www.bibs.co.in/packages/toastr/toastr.min.js"></script>
+
+    <script src="https://www.bibs.co.in/js/my-script.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        AOS.init({
+          easing: 'ease-out-back',
+          duration: 1000
+        });
+      });
+    </script>
+    <script src="https://www.bibs.co.in/front/js/style.js"></script>
+
+    <script src="https://www.bibs.co.in/front/js/mega-menu.js"></script>
+
+    <script src="https://www.bibs.co.in/front/js/custom.js"></script>
+
+  </body>
+
+</html>

@@ -44,7 +44,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Private College",
     logo: bhawanipurLogo,
-    img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/9/92/Bhawanipur_Education_Society_College%2C_Main_Building.jpeg",
     categories: ["Business", "Arts"],
     officialSite: "https://bhawanipurglobal.edu.in/",
     official_site: "https://bhawanipurglobal.edu.in/"
@@ -57,7 +57,7 @@ export const collegeData = [
     location: "Barasat, West Bengal",
     type: "Private University",
     logo: adamasLogo,
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    img: "https://s3-ap-south-1.amazonaws.com/ricedigitals3bucket/AUPortalContent/2019/05/30100229/photo-header.jpg",
     categories: ["Engineering", "Business", "Science", "Law", "Arts", "Design"],
     officialSite: "https://adamasuniversity.ac.in",
     official_site: "https://adamasuniversity.ac.in"
@@ -70,7 +70,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Media & Management Institute",
     logo: ileadLogo,
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    img: "https://ilead.net.in/wp-content/uploads/2026/02/ilead-banner-2.png",
     categories: ["Design", "Business", "Arts"],
     officialSite: "https://ilead.net.in",
     official_site: "https://ilead.net.in"
@@ -83,7 +83,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Private College Group",
     logo: georgeLogo,
-    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+    img: "https://www.georgecollege.org/public/images/campus/2025/2.jpg",
     categories: ["Business", "Arts", "Medicine"],
     officialSite: "https://georgecollege.org",
     official_site: "https://georgecollege.org"
@@ -96,7 +96,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Private Institute",
     logo: eiilmLogo,
-    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    img: "https://eiilm.co.in/wp-content/uploads/2021/06/IMG_9512.webp",
     categories: ["Business"],
     officialSite: "https://eiilm.co.in",
     official_site: "https://eiilm.co.in"
@@ -111,7 +111,7 @@ export const collegeData = [
     location: "Barasat, West Bengal",
     type: "Private University",
     logo: brainwareLogo,
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/8/81/Brainware-university.jpg",
     categories: ["Engineering", "Business", "Science", "Arts"],
     officialSite: "https://brainwareuniversity.ac.in",
     official_site: "https://brainwareuniversity.ac.in"
@@ -176,7 +176,7 @@ export const collegeData = [
     location: "South 24 Parganas, West Bengal",
     type: "Private University",
     logo: tnuLogo,
-    img: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=800&q=80",
+    img: "https://www.tnu.in/wp-content/uploads/2021/09/gallery-ship-in-campus.jpg",
     categories: ["Engineering", "Medicine", "Science"],
     officialSite: "https://tnu.in",
     official_site: "https://tnu.in"
@@ -202,7 +202,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Engineering College",
     logo: iemLogo,
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Institute_of_Engineering_and_Management_01.jpg/1280px-Institute_of_Engineering_and_Management_01.jpg",
     categories: ["Engineering", "Business"],
     officialSite: "https://iem.edu.in",
     official_site: "https://iem.edu.in"
@@ -215,7 +215,7 @@ export const collegeData = [
     location: "Salt Lake, Kolkata",
     type: "Engineering College",
     logo: technoLogo,
-    img: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80",
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Techno_India_University_-_EM_4_Sector_V_-_Salt_Lake_City_-_Kolkata_2017-04-29_1689.JPG/1280px-Techno_India_University_-_EM_4_Sector_V_-_Salt_Lake_City_-_Kolkata_2017-04-29_1689.JPG",
     categories: ["Engineering", "Business", "Science"],
     officialSite: "https://technoindiauniversity.ac.in",
     official_site: "https://technoindiauniversity.ac.in"
@@ -241,7 +241,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Private University",
     logo: snuLogo,
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Sister_Nivedita_University.jpg/1280px-Sister_Nivedita_University.jpg",
     categories: ["Engineering", "Business", "Science", "Arts", "Design", "Law"],
     officialSite: "https://snuniv.ac.in",
     official_site: "https://snuniv.ac.in"
@@ -254,7 +254,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Education Group",
     logo: jisLogo,
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    img: "https://www.jisuniversity.ac.in/images/campus-front.jpg",
     categories: ["Engineering", "Business", "Science", "Medicine"],
     officialSite: "https://jisgroup.org",
     official_site: "https://jisgroup.org"
@@ -306,7 +306,7 @@ export const collegeData = [
     location: "Kolkata, West Bengal",
     type: "Engineering College",
     logo: rccitLogo,
-    img: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RCCIIT_Campus.jpg/1280px-RCCIIT_Campus.jpg",
     categories: ["Engineering"],
     officialSite: "https://rcciit.org",
     official_site: "https://rcciit.org"
@@ -390,7 +390,7 @@ export const collegeData = [
     location: "Bhubaneswar, Odisha",
     type: "Private Deemed University",
     logo: kiitLogo,
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    img: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Kiit_library_building.jpg/1280px-Kiit_library_building.jpg",
     categories: ["Engineering", "Business", "Science", "Law", "Medicine", "Design", "Arts"],
     officialSite: "https://kiit.ac.in/",
     official_site: "https://kiit.ac.in/"
@@ -403,7 +403,7 @@ export const collegeData = [
     location: "Chennai, Tamil Nadu",
     type: "Private Deemed University",
     logo: srmLogo,
-    img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/SRM_Tech_Park.jpg/1280px-SRM_Tech_Park.jpg",
     categories: ["Engineering", "Business", "Science", "Law", "Medicine"],
     officialSite: "https://www.srmist.edu.in/",
     official_site: "https://www.srmist.edu.in/"
@@ -416,7 +416,7 @@ export const collegeData = [
     location: "Vellore, Tamil Nadu",
     type: "Private Deemed University",
     logo: vitLogo,
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/4/43/Technology_Tower%28VIT%29.jpg",
     categories: ["Engineering", "Business", "Science", "Law"],
     officialSite: "https://vit.ac.in/",
     official_site: "https://vit.ac.in/"
@@ -429,7 +429,7 @@ export const collegeData = [
     location: "Pilani, Rajasthan",
     type: "Private Deemed University",
     logo: bitsLogo,
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bitmesra.JPG",
     categories: ["Engineering", "Business", "Science"],
     officialSite: "https://www.bits-pilani.ac.in/",
     official_site: "https://www.bits-pilani.ac.in/"
@@ -442,7 +442,7 @@ export const collegeData = [
     location: "Bhubaneswar, Odisha",
     type: "Private Deemed University",
     logo: soaLogo,
-    img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/ITER_Campus_Bhubaneswar.jpg/1280px-ITER_Campus_Bhubaneswar.jpg",
     categories: ["Engineering", "Business", "Science", "Law", "Medicine"],
     officialSite: "https://www.soa.ac.in/",
     official_site: "https://www.soa.ac.in/"
@@ -455,7 +455,7 @@ export const collegeData = [
     location: "Bhubaneswar, Odisha",
     type: "Private University",
     logo: cvRamanLogo,
-    img: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/C._V._Raman_Global_University_Campus.jpg/1280px-C._V._Raman_Global_University_Campus.jpg",
     categories: ["Engineering", "Business", "Science"],
     officialSite: "https://cgu-odisha.ac.in/",
     official_site: "https://cgu-odisha.ac.in/"
@@ -468,7 +468,7 @@ export const collegeData = [
     location: "Manipal, Karnataka",
     type: "Private Deemed University",
     logo: manipalLogo,
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Manipal_Academy_of_Higher_Education_%28MAHE%29_Building%2C_Manipal.jpg/1280px-Manipal_Academy_of_Higher_Education_%28MAHE%29_Building%2C_Manipal.jpg",
     categories: ["Engineering", "Business", "Science", "Medicine", "Design"],
     officialSite: "https://manipal.edu/",
     official_site: "https://manipal.edu/"
@@ -481,7 +481,7 @@ export const collegeData = [
     location: "Bangalore, Karnataka",
     type: "Private University",
     logo: msRamaiahLogo,
-    img: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Manipal_Academy_of_Higher_Education_%28MAHE%29_Building%2C_Manipal.jpg/1280px-Manipal_Academy_of_Higher_Education_%28MAHE%29_Building%2C_Manipal.jpg",
     categories: ["Engineering", "Business", "Science", "Design", "Medicine"],
     officialSite: "https://www.msruas.ac.in/",
     official_site: "https://www.msruas.ac.in/"

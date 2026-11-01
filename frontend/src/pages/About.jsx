@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Compass, ShieldCheck, Zap, User } from "lucide-react";
+import founderImg from "../assets/founder.jpeg";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -28,7 +29,7 @@ const About = () => {
             Choosing a career<br />shouldn't feel like<br />guessing.
           </h1>
           <p className="text-[var(--muted)] text-base md:text-lg max-w-[500px] mx-auto leading-relaxed reveal-item font-body font-light">
-            We built A & J Career Guidance to give students honest data, animated timelines, and personalized recommendations, replacing guessing with clarity.
+            We built AJ Career Guidance to give students honest data, animated timelines, and personalized recommendations, replacing guessing with clarity.
           </p>
         </div>
       </section>
@@ -65,6 +66,37 @@ const About = () => {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 FOUNDER PROFILE SECTION */}
+      <section className="section py-20 bg-[var(--ivory)] border-b border-[var(--stone)]/40">
+        <div className="container max-w-[900px]">
+          <div className="bg-white border border-[var(--stone)] rounded-[32px] p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-12 reveal-item">
+            <div className="relative w-44 h-52 shrink-0 rounded-2xl overflow-hidden border-2 border-[var(--stone)] shadow-md">
+              <img 
+                src={founderImg} 
+                alt="Jaydeep Majumdar - Founder" 
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-md rounded-lg py-1 px-2 text-center">
+                <span className="text-[10px] font-mono uppercase text-white font-bold block">FOUNDER</span>
+              </div>
+            </div>
+
+            <div>
+              <span className="text-xs font-bold text-[var(--coral)] uppercase tracking-widest block mb-2">Leadership</span>
+              <h3 className="font-display text-2xl md:text-3xl font-medium text-[var(--ink)] mb-2">Jaydeep Majumdar</h3>
+              <p className="text-xs font-mono uppercase text-[var(--muted)] tracking-wider mb-4">Founder & Chief Educational Advisor</p>
+              <p className="text-sm text-[var(--muted)] leading-relaxed font-light mb-6">
+                "Our promise to every family is uncompromising honesty. We guide students strictly according to their natural cognitive strengths and verified institutional merit, helping them find where they will truly thrive."
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs font-semibold text-[var(--ink)]">
+                <span className="px-3 py-1.5 rounded-xl bg-[var(--ivory)] border border-[var(--stone)]/60">10,000+ Students Mentored</span>
+                <span className="px-3 py-1.5 rounded-xl bg-[var(--ivory)] border border-[var(--stone)]/60">34+ Partner Colleges</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

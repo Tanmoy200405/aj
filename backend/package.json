@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Express Backend for A & J Career Guidance",
+  "description": "Express Backend for AJ Career Guidance",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

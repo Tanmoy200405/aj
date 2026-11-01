@@ -10,11 +10,30 @@
   --color-muted-olive: #5A604B;
   --color-muted-gold: #C3A36A;
 
+  --color-coral: #FF5B45;
+  --color-coral-hover: #E0432C;
+  --color-ivory: #FBF9F5;
+  --color-ink: #111111;
+  --color-stone: #E5E0D8;
+  --color-muted: #736B63;
+  --color-sage: #A8B7A0;
+  --color-gold: #D4AF37;
+
   --font-display: "DM Serif Display", serif;
   --font-sans: "Manrope", sans-serif;
 }
 
 :root {
+  --coral: #FF5B45;
+  --coral-hover: #E0432C;
+  --ivory: #FBF9F5;
+  --ink: #111111;
+  --stone: #E5E0D8;
+  --muted: #736B63;
+  --sage: #A8B7A0;
+  --gold: #D4AF37;
+  --sand: #F0EAE1;
+
   --background: #0A0A09;
   --warm-ivory: #F1E9DB;
   --muted-beige: #B8AA97;
@@ -1127,3 +1146,22 @@ select {
   color: #111111 !important;
   border-color: #F5F2EA !important;
 }
+
+/* =====================================================
+   INFINITE MARQUEE ANIMATION
+   ===================================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+

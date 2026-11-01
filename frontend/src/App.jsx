@@ -18,11 +18,11 @@ import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
 import WhatsAppButton from "./components/WhatsAppButton";
-import ScholarshipPopup from "./components/ScholarshipPopup";
+import Footer from "./components/Footer";
 
 const AppContent = ({ loading, setLoading }) => {
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/" || location.pathname === "/explore";
 
   return (
     <div className="relative min-h-screen selection:bg-[var(--coral)] selection:text-[var(--white)] bg-[var(--ivory)] text-[var(--ink)]">
@@ -36,6 +36,7 @@ const AppContent = ({ loading, setLoading }) => {
           <div className={isHome ? "" : "pt-28"}>
             <Routes>
               <Route path="/" element={<Explore />} />
+              <Route path="/explore" element={<Explore />} />
               <Route path="/careers" element={<CareerExplorer />} />
               <Route path="/careers/:id" element={<CareerDetail />} />
               <Route path="/quiz" element={<CareerQuiz />} />
@@ -50,8 +51,8 @@ const AppContent = ({ loading, setLoading }) => {
               <Route path="/scholarship" element={<Scholarship />} />
             </Routes>
           </div>
+          <Footer />
           <WhatsAppButton />
-          {isHome && <ScholarshipPopup />}
         </>
       )}
     </div>
