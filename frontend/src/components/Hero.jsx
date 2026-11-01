@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Target } from "lucide-react";
-import heroArchStudent from "../assets/hero_arch_student.png";
+import { ArrowRight, Sparkles, CheckCircle2, ShieldCheck, GraduationCap, Award } from "lucide-react";
+import heroCampusStudents from "../assets/hero_campus_students.jpg";
 import photo1 from "../assets/testimonial/photo1.jpeg";
 import photo2 from "../assets/testimonial/photo2.jpeg";
 import photo3 from "../assets/testimonial/photo3.jpeg";
@@ -9,82 +9,93 @@ import photo4 from "../assets/testimonial/photo4.jpeg";
 
 const Hero = () => {
   return (
-    <section className="min-h-[90vh] flex items-center pt-28 pb-16 bg-[var(--ivory)] text-[var(--ink)] relative overflow-hidden" id="home">
+    <section className="min-h-[88vh] flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 bg-[var(--ivory)] text-[var(--ink)] relative overflow-hidden" id="home">
       
-      {/* Background Subtle Grid */}
-      <div className="absolute inset-0 grid grid-cols-4 pointer-events-none opacity-[0.03] border-x border-[var(--ink)]">
+      {/* Background Subtle Editorial Grid Lines */}
+      <div className="absolute inset-0 grid grid-cols-4 pointer-events-none opacity-[0.035] border-x border-[var(--ink)]">
         <div className="border-r border-[var(--ink)] h-full" />
         <div className="border-r border-[var(--ink)] h-full" />
         <div className="border-r border-[var(--ink)] h-full" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      {/* Ambient Radial Gradient for Depth */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[var(--coral)]/5 via-amber-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* LEFT COLUMN: Editorial Typography */}
+          {/* LEFT COLUMN: Editorial Typography & Value Proposition */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             
-            <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[var(--coral)] mb-4 inline-flex items-center gap-2">
-              <Sparkles size={14} />
-              ADMISSIONS & CAREER ADVISORY • BATCH 2026
-            </span>
+            {/* Top Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[var(--stone)] shadow-sm text-xs font-bold uppercase tracking-wider text-[var(--coral)] mb-6 w-fit">
+              <Sparkles size={13} className="text-[var(--coral)]" />
+              <span>Admissions & Career Advisory • Batch 2026</span>
+            </div>
 
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight text-[var(--ink)] mb-6">
-              The guidance you need. <br />
-              <span className="italic font-display text-[var(--coral)] font-light">The college</span> you deserve.
+            {/* Main Headline */}
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.04] tracking-tight text-[var(--ink)] mb-6">
+              Architecting <br />
+              <span className="italic font-display text-[var(--coral)] font-light">extraordinary</span> <br />
+              futures.
             </h1>
 
+            {/* Subtitle */}
             <p className="text-base sm:text-lg text-[var(--muted)] font-body font-light leading-relaxed max-w-[560px] mb-8">
-              Personalized admission counseling, verified placement records, transparent fee breakdowns, and structured academic roadmaps for Class 12 & undergraduate students. 100% unbiased advisory.
+              Personalized stream selection, verified college admissions, and dedicated 1-on-1 mentorship for Class 12 & undergraduate students across West Bengal and India. 100% unbiased, student-first guidance.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-6">
               <Link 
                 to="/contact" 
-                className="btn btn-coral group"
+                className="btn btn-coral group px-7 py-3.5 text-sm font-semibold rounded-full shadow-lg shadow-[var(--coral)]/20"
               >
                 <span>Book Free Counseling</span>
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
 
               <Link 
-                to="/colleges" 
-                className="btn btn-outline group"
+                to="/careers" 
+                className="btn btn-outline px-6 py-3.5 text-sm font-semibold rounded-full border border-[var(--stone)] hover:border-[var(--coral)] hover:bg-white transition-all duration-300"
               >
-                <span>Explore 34+ Colleges</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5 opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0" />
-              </Link>
-
-              <Link 
-                to="/scholarship" 
-                className="text-xs uppercase font-bold tracking-widest text-[var(--coral)] hover:underline flex items-center gap-1.5 py-2 px-1"
-              >
-                <span>Flat ₹1 Lakh Exam</span>
-                <ArrowRight size={13} />
+                <span>Explore Career Pathways</span>
               </Link>
             </div>
 
-            {/* Social Proof & Trust Strip */}
+            {/* Flat 1 Lakh Scholarship Exam Callout */}
+            <div className="mb-10">
+              <Link 
+                to="/scholarship"
+                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-900 text-xs font-bold hover:bg-amber-500/20 transition-all duration-300"
+              >
+                <Award size={15} className="text-amber-600 flex-shrink-0" />
+                <span>AJ Flat ₹1,00,000 Scholarship Qualifying Exam for admitted students</span>
+                <ArrowRight size={13} className="text-amber-700 ml-1" />
+              </Link>
+            </div>
+
+            {/* Social Proof Strip with Authentic Student Avatars */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-6 border-t border-[var(--stone)]/60">
-              <div className="flex -space-x-2.5">
+              <div className="flex -space-x-2.5 flex-shrink-0">
                 <img 
                   src={photo1} 
-                  alt="Tanmoy Mukherjee - St Thomas College of Engineering & Technology" 
+                  alt="Tanmoy Mukherjee" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
                 />
                 <img 
                   src={photo2} 
-                  alt="Moubani Issu - Bhawanipur Global Campus" 
+                  alt="Moubani Issu" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
                 />
                 <img 
                   src={photo3} 
-                  alt="Aysika Dey - Bhawanipur Global Campus" 
+                  alt="Aysika Dey" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
                 />
                 <img 
                   src={photo4} 
-                  alt="Sambhabi Banerjee - Bhawanipur Global Campus" 
+                  alt="Sambhabi Banerjee" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
                 />
               </div>
@@ -96,72 +107,57 @@ const Hero = () => {
                   <span className="text-[var(--muted)] font-normal text-[11px]">(10,000+ Students Mentored)</span>
                 </div>
                 <span className="text-[11px] text-[var(--muted)] font-light block">
-                  34+ Partner Colleges • Zero Hidden Charges • Direct Campus Admissions
+                  34+ Partner Colleges • Direct Campus Admissions • Zero Hidden Charges
                 </span>
               </div>
             </div>
 
           </div>
 
-          {/* RIGHT COLUMN: College & Career Visual Composition */}
+          {/* RIGHT COLUMN: Authentic High-Res Visual Composition */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             
-            {/* Main Center Image */}
-            <div className="relative w-full max-w-[380px] aspect-[4/5] rounded-t-[180px] rounded-b-3xl overflow-hidden border border-[var(--stone)]/60 shadow-2xl bg-[#EFECE6] group">
-              <img 
-                src={heroArchStudent} 
-                alt="AJ Career Guidance Student" 
-                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
+            {/* Main Visual Frame */}
+            <div className="relative w-full max-w-[430px] rounded-[32px] overflow-hidden border border-[var(--stone)]/80 shadow-2xl shadow-[var(--ink)]/8 bg-white group">
+              <div className="aspect-[4/5] w-full overflow-hidden">
+                <img 
+                  src={heroCampusStudents} 
+                  alt="Students on college campus mentored by AJ Career Guidance" 
+                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
 
-              {/* Top Floating Badge */}
-              <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/60 shadow-lg flex items-center gap-2">
-                <Sparkles size={13} className="text-[var(--coral)]" />
-                <span className="text-[10px] font-mono tracking-wider text-[var(--ink)] uppercase font-bold">
-                  34+ ACCREDITED COLLEGES
+              {/* Top Glass Badge */}
+              <div className="absolute top-5 left-5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/70 shadow-md flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-mono tracking-widest text-[var(--ink)] uppercase font-bold">
+                  ADMISSIONS OPEN 2026-27
                 </span>
               </div>
-            </div>
 
-            {/* Overlapping College Photo Card (Top Left) - Real Adamas Campus */}
-            <div className="absolute -left-6 sm:-left-10 top-12 bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-[var(--stone)] shadow-xl flex items-center gap-3 max-w-[220px] z-20 animate-in fade-in duration-700 transform hover:scale-105 transition-transform">
-              <img 
-                src="https://s3-ap-south-1.amazonaws.com/ricedigitals3bucket/AUPortalContent/2019/05/30100229/photo-header.jpg" 
-                alt="Adamas University Barasat Campus" 
-                className="w-12 h-12 rounded-xl object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=200&q=80"; }}
-              />
-              <div className="min-w-0">
-                <span className="text-[9px] font-mono uppercase text-[var(--coral)] font-bold block">
-                  Partner Campus
-                </span>
-                <h4 className="text-xs font-bold text-[var(--ink)] truncate">
-                  Adamas University
-                </h4>
-                <span className="text-[9px] text-[var(--muted)] block">
-                  Barasat • 120-Acre Campus
-                </span>
-              </div>
-            </div>
+              {/* Bottom Glass Overlay Card */}
+              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/80 shadow-lg flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--coral)]/10 text-[var(--coral)] flex items-center justify-center flex-shrink-0">
+                    <GraduationCap size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-[var(--ink)] leading-tight">
+                      34+ Leading Colleges
+                    </h4>
+                    <span className="text-[10px] text-[var(--muted)] font-medium">
+                      Engineering • Management • Medical
+                    </span>
+                  </div>
+                </div>
 
-            {/* Overlapping College Photo Card (Bottom Right) - Real IEM Campus */}
-            <div className="absolute -right-4 sm:-right-8 bottom-8 bg-white/95 backdrop-blur-md p-2.5 rounded-2xl border border-[var(--stone)] shadow-xl flex items-center gap-3 max-w-[220px] z-20 animate-in fade-in duration-700 transform hover:scale-105 transition-transform">
-              <img 
-                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Institute_of_Engineering_and_Management_01.jpg/1280px-Institute_of_Engineering_and_Management_01.jpg" 
-                alt="IEM Kolkata Salt Lake Campus" 
-                className="w-12 h-12 rounded-xl object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=200&q=80"; }}
-              />
-              <div className="min-w-0">
-                <span className="text-[9px] font-mono uppercase text-emerald-600 font-bold block">
-                  Top Tech College
-                </span>
-                <h4 className="text-xs font-bold text-[var(--ink)] truncate">
-                  IEM Kolkata
-                </h4>
-                <span className="text-[9px] text-[var(--muted)] font-semibold block">
-                  Salt Lake • NIRF Ranked
-                </span>
+                <Link
+                  to="/colleges"
+                  className="px-3 py-1.5 rounded-lg bg-[var(--ivory)] hover:bg-[var(--coral)] hover:text-white border border-[var(--stone)] text-[11px] font-bold text-[var(--ink)] transition-colors whitespace-nowrap flex items-center gap-1"
+                >
+                  <span>Explore</span>
+                  <ArrowRight size={11} />
+                </Link>
               </div>
             </div>
 
